@@ -4,43 +4,73 @@
     "parameters": {
         "FunctionName": {
             "defaultValue": "AWSCloudTrail",
-            "type": "string"
+            "type": "string",
+			"metadata": {
+				"description": "Specifies the name of the Function App."
+			}
         },
         "WorkspaceID": {
             "type": "string",
-            "defaultValue": "<workspaceID>"
+            "defaultValue": "<workspaceID>",
+			"metadata": {
+				"description": "Specifies the Log Analytics Workspace Id."
+			}
         },
         "WorkspaceKey": {
             "type": "securestring",
-            "defaultValue": ""
+            "defaultValue": "",
+			"metadata": {
+				"description": "Specifies the Log Analytics Workspace Key."
+			}
         },
         "AWSAccessKeyId": {
             "type": "string",
-            "defaultValue": "<AWSAccessKeyId>"
+            "defaultValue": "<AWSAccessKeyId>",
+			"metadata": {
+				"description": "Specifies AWS Access Key Id."
+			}
         },
         "AWSSecretAccessKey": {
             "type": "securestring",
-            "defaultValue": ""
+            "defaultValue": "",
+			"metadata": {
+				"description": "Specifies AWS Secret Access Key."
+			}
         },
         "AWSRegionName": {
             "type": "string",
-            "defaultValue": "<AWSRegionName>"
+            "defaultValue": "<AWSRegionName>",
+			"metadata": {
+				"description": "Specifies AWS Region"
+			}
         },
 		"S3Bucket": {
             "type": "string",
-            "defaultValue": "<S3Bucket>"
+            "defaultValue": "<S3Bucket>",
+			"metadata": {
+				"description": "Specifies AWS Bucket Name"
+			}
         },
 		"LogAnalyticsCustomLogName": {
             "type": "string",
-            "defaultValue": "<LogAnalyticsCustomLogName>"
+            "defaultValue": "<LogAnalyticsCustomLogName>",
+			"metadata": {
+				"description": "Specifies Azure Log Analytics Workspace Table Name."
+			}
         },
 		"CoreFieldsAllTable": {
             "type": "string",
-            "defaultValue": "<true>"
+            "defaultValue": "true",
+			"metadata": {
+				"description": "You can set this table by providing boolean value true/false"
+			}
         },
 		"SplitAWSResourceTypes": {
             "type": "string",
-            "defaultValue": "<true>"
+            "defaultValue": "true",
+			"metadata": {
+				"description": "You can set this table by providing boolean value true/false"
+			}
         }
     },
     "variables": {
