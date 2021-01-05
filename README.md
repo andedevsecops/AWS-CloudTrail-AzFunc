@@ -20,7 +20,7 @@ To avoid additional billing and duplication:
 
 ## **Function Flow process**
 **CloudTrail Logs --> AWS S3 --> Azure Function --> Azure Log Analytics**
-
+![AWSCloudTrailAzFun](./images/AWSCloudTrailAzFun.PNG)
 ## Installation / Setup Guide
 
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fandedevsecops%2FAWS-CloudTrail-AzFunc%2Fmain%2Fazuredeploy_awscloudtrail.json" target="_blank">
