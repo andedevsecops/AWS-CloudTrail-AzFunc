@@ -148,7 +148,7 @@ def main(mytimer: func.TimerRequest) -> None:
         file_events = 0
         t0 = time.time()    
         for event in coreEvents:
-            sentinel = AzureSentinelConnector(sentinel_customer_id, sentinel_shared_key, sentinel_log_type, queue_size=10000, bulks_number=10)
+            sentinel = AzureSentinelConnector(sentinel_customer_id, sentinel_shared_key, sentinel_log_type + '_ALL' , queue_size=10000, bulks_number=10)
             with sentinel:
                 sentinel.send(event)
             file_events += 1 
@@ -169,7 +169,7 @@ def main(mytimer: func.TimerRequest) -> None:
         file_events = 0
         t0 = time.time()
         for event in coreEvents:
-            sentinel = AzureSentinelConnector(sentinel_customer_id, sentinel_shared_key, sentinel_log_type, queue_size=10000, bulks_number=10)
+            sentinel = AzureSentinelConnector(sentinel_customer_id, sentinel_shared_key, sentinel_log_type + '_ALL', queue_size=10000, bulks_number=10)
             with sentinel:
                 sentinel.send(event)
             file_events += 1
