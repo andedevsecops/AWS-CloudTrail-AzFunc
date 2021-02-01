@@ -40,7 +40,7 @@ To avoid additional billing and duplication:
 	"AWS Access Key Id": AWS Access Key
 	"AWS Secret Key ID": AWS Secret Key
 	"AWS Region Name" : AWS SecurityHub Region
-	"S3 Bucket": AWS S3 Bucket URI
+	"S3 Bucket": AWS S3 Bucket Name
 	"CustomLogTableName": Azure Log Analytics Custom Log Table Name	
 	"CoreFieldsAllTable": To Turn on/off LogAnalyticsTableName_ALL
 	"SplitAWSResourceTypeTables": To Turn on/off SplitAWSResourceTypeTables
@@ -60,10 +60,10 @@ To avoid additional billing and duplication:
  
 2. Parameterized AWS S3 fresh event duration using environment variable "FreshEventTimeStamp". Value must be in minutes.  
    **Note**  
-   Azure Function trigger schedule and FreshEventTimeStamp
-   Ex: If you want to trigger function every 30 min then values must be
-   FreshEventTimeStamp=30
-   Schedule=0 */30 * * * *
+   Azure Function trigger schedule and FreshEventTimeStamp  
+   Ex: If you want to trigger function every 30 min then values must be  
+   FreshEventTimeStamp=30  
+   Schedule=0 */30 * * * *  
       
 4. AWSAccessKey, AWSSecretAccessKey and Workspace Key will be placed as "Secrets" in the Azure KeyVault `<<functionappname>><<uniqueid>>` with only Azure Function access policy. If you want to see/update these secrets,
 
