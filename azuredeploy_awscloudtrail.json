@@ -8,13 +8,7 @@
 			"metadata": {
 				"description": "Specifies the name of the Function App."
 			}
-        },
-		"_artifactsLocation": {
-            "type": "string",
-            "metadata": {
-                "description": "The location of resources"
-            }
-        },
+        },		
         "WorkspaceID": {
             "type": "string",
             "defaultValue": "<workspaceID>",
