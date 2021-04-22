@@ -41,7 +41,8 @@ To avoid additional billing and duplication:
 	"AWS Access Key Id": AWS Access Key
 	"AWS Secret Key ID": AWS Secret Key
 	"AWS Region Name" : AWS SecurityHub Region
-	"S3 Bucket": AWS S3 Bucket Name
+	"S3 Bucket": AWS S3 Bucket URI Ex: s3://<<S3 Bucket Name>>/AWSLogs/
+	"CloudTrailFolderName" : Folder Name for the CloudTrails
 	"CustomLogTableName": Azure Log Analytics Custom Log Table Name	
 	"CoreFieldsAllTable": To Turn on/off LogAnalyticsTableName_ALL
 	"SplitAWSResourceTypeTables": To Turn on/off SplitAWSResourceTypeTables
