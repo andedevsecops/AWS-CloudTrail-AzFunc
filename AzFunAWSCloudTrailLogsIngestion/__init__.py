@@ -13,6 +13,7 @@ import json
 import hashlib
 import hmac
 import base64
+import re
 from threading import Thread
 from io import StringIO
 
@@ -37,7 +38,7 @@ if ((logAnalyticsUri in (None, '') or str(logAnalyticsUri).isspace())):
 pattern = r'https:\/\/([\w\-]+)\.ods\.opinsights\.azure.([a-zA-Z\.]+)$'
 match = re.match(pattern,str(logAnalyticsUri))
 if(not match):
-    raise Exception("Cisco_Umbrella: Invalid Log Analytics Uri.")
+    raise Exception("AWSCloudTrailAzFunc: Invalid Log Analytics Uri.")
 
 # Boolean Values
 isCoreFieldsAllTable = os.environ.get('CoreFieldsAllTable')
