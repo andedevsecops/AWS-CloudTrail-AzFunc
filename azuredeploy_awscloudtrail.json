@@ -39,7 +39,7 @@
 				"description": "Specifies AWS Region"
 			}
         },
-		"S3Bucket": {
+		"S3BucketURI": {
             "type": "string",            
 			"metadata": {
 				"description": "Specifies AWS Bucket URI. Ex: s3://<<S3 Bucket Name>>/AWSLogs/"
@@ -209,7 +209,7 @@
                         "AWSSecretAccessKey": "[concat('@Microsoft.KeyVault(SecretUri=', reference(variables('AWSSecretAccessKey')).secretUriWithVersion, ')')]",
                         "AWSRegionName": "[parameters('AWSRegionName')]",
 						"LogAnalyticsCustomLogName":"[parameters('LogAnalyticsCustomLogName')]",
-						"S3Bucket": "[parameters('S3Bucket')]",
+						"S3Bucket": "[parameters('S3BucketURI')]",
 						"CoreFieldsAllTable":"[parameters('CoreFieldsAllTable')]",
 						"SplitAWSResourceTypes":"[parameters('SplitAWSResourceTypes')]",
 						"Schedule":"0 */10 * * * *",
