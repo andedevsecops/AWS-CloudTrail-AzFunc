@@ -22,13 +22,11 @@ To avoid additional billing and duplication:
 **CloudTrail Logs --> AWS S3 --> Azure Function --> Azure Log Analytics**
 ![AWSCloudTrailAzFun](./images/AWSCloudTrailAzFun.PNG)
 ## Installation / Setup Guide
-## Option 1 - Azure Resource Manager (ARM) Template
 
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fandedevsecops%2FAWS-CloudTrail-AzFunc%2Fmain%2Fazuredeploy_awscloudtrail.json" target="_blank">
+1. Click  "Deploy To Azure" (For both Commercial & Azure GOV)  
+   <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fandedevsecops%2FAWS-CloudTrail-AzFunc%2Fmain%2Fazuredeploy_awscloudtrail.json" target="_blank">
     <img src="https://aka.ms/deploytoazurebutton"/>
-</a>
-
-1. Click  "Deploy To Azure"/ "Deploy to Azure Gov"
+</a>  
 
 2. Select the preferred **Subscription**, **Resource Group** and **Location**  
    **Note**  
@@ -41,7 +39,8 @@ To avoid additional billing and duplication:
 	"AWS Access Key Id": AWS Access Key
 	"AWS Secret Key ID": AWS Secret Key
 	"AWS Region Name" : AWS SecurityHub Region
-	"S3 Bucket": AWS S3 Bucket URI Ex: s3://<<S3 Bucket Name>>/AWSLogs/
+	"S3 Bucket": AWS S3 Bucket URI  
+	 Ex: s3://<<S3 Bucket Name>>/AWSLogs/
 	"CloudTrailFolderName" : Folder Name for the CloudTrails
 	"CustomLogTableName": Azure Log Analytics Custom Log Table Name	
 	"CoreFieldsAllTable": To Turn on/off LogAnalyticsTableName_ALL
