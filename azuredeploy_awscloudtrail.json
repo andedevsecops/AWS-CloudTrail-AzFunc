@@ -77,6 +77,7 @@
 		"StorageAccountName":"[substring(variables('FunctionName'), 0, 22)]",
 		"KeyVaultName": "[substring(variables('FunctionName'), 0, 22)]",
 		"LogAnalyticsWorkspaceKey": "LogAnalyticsWorkspaceKey",
+		"HostingPlanName":"[concat('ASP-',substring(variables('FunctionName'), 0, 22))]",
 		"AWSAccessKeyId":"AWSAccessKeyId",
 		"AWSSecretAccessKey":"AWSSecretAccessKey",
 		"StorageSuffix":"[environment().suffixes.storage]",
@@ -164,6 +165,25 @@
                 }
             }
         },
+		{
+            "apiVersion": "2018-02-01",
+            "name": "[variables('HostingPlanName')]",
+            "type": "Microsoft.Web/serverfarms",
+            "location": "[resourceGroup().location]",
+            "kind": "elastic",
+            "tags": {},
+            "dependsOn": [],
+            "properties": {
+                "targetWorkerCount": "2",
+                "targetWorkerSizeId": "3",                
+                "reserved": true,
+                "maximumElasticWorkerCount": "20"
+            },
+            "sku": {
+                "tier": "ElasticPremium",
+                "name": "EP1"
+            }
+        },
         {
             "type": "Microsoft.Web/sites",
             "apiVersion": "2018-11-01",
@@ -171,7 +191,8 @@
             "location": "[resourceGroup().location]",
             "dependsOn": [
                 "[resourceId('Microsoft.Storage/storageAccounts', variables('StorageAccountName'))]",
-                "[resourceId('Microsoft.Insights/components', variables('FunctionName'))]"
+                "[resourceId('Microsoft.Insights/components', variables('FunctionName'))]",
+				"[concat('Microsoft.Web/serverfarms/', variables('HostingPlanName'))]"
             ],
             "kind": "functionapp,linux",
             "identity": {
@@ -182,7 +203,8 @@
                 "httpsOnly": true,
                 "clientAffinityEnabled": true,
                 "alwaysOn": true,
-                "reserved": true
+                "reserved": true,
+				"serverFarmId": "[concat('/subscriptions/', subscription().subscriptionId,'/resourcegroups/', resourceGroup().name, '/providers/Microsoft.Web/serverfarms/', variables('HostingPlanName'))]"
             },
             
             "resources": [
